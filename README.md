@@ -54,8 +54,8 @@ nano device-list
 nohup ./collect-route.sh &
 
 nohup ./free-ip.sh <value of first octet> <value of second octet> <value of start of range third octet> <value of start of range third octet> &
-
-                Some files will be created but the important one is in the results folder named <oct1>-<oct2>-<oct3_start>-to-<oct3_end>-free-ip-report.txt use nano to look at it and 
+		
+		Some files will be created but the important one is in the results folder named <oct1>-<oct2>-<oct3_start>-to-<oct3_end>-free-ip-report.txt use nano to look at it and 
 		copy and paste the output to a notepad file for you to fill in the spreadsheet or documentation.         
 
 nano results/<oct1>-<oct2>-<oct3_start>-to-<oct3_end>-free-ip-report.txt
