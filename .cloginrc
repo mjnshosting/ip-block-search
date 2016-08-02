@@ -1,0 +1,4 @@
+add user * mjns
+add password * <password>
+add noenable * 1
+add method * {ssh:22} telnet
