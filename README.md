@@ -34,7 +34,7 @@ Install the "rancid" package from your OS's repo. This script was written on Fed
 
 All devices must be placed in the "device-list" on their own line. 
 
-#Instructions: (While in home directory)
+#Instructions:
 nano free-ip.sh
 
                 copy and paste the code contained the attached zip file "free-ip.txt". Then press ctrl+x then ‘y’ then ‘Enter’
@@ -68,8 +68,7 @@ nohup ./collect-route.sh &
 
 tail -f nohup.out
 			
-			**When using nohup tail the nohup.out file for an update to see when the script is finished or just down use nohup with the & to run this in the**
-			**foreground. Not suggested because this can take hours and will not finish where it left off. **
+		**When using nohup tail the nohup.out file for an update to see when the script is finished or just down use nohup with the & to run this in the foreground. Not suggested because this can take hours and will not finish where it left off. **
 
 nohup ./free-ip.sh 192 168 0 26 & 
 		
