@@ -20,7 +20,7 @@ rm results/$oct1-$oct2-$oct3_start-to-$oct3_end-free-ip-* > /dev/null 2>&1
 #Find your blocks from the ip route.
 for (( c=$oct3_start; c<=$oct3_end; c++ ))
         do (
-                cat route/*-route.txt | grep "$oct1.$oct2.$c" | grep "C\|S\|L" | sed -e "s/,/:/" | sort -u -o blocks/$oct1.$oct2.$c-block.txt
+                cat route/*-route.txt | grep -F "$oct1.$oct2.$c." | grep "C\|S\|L" | sed -e "s/,/:/" | sort -u -o blocks/$oct1.$oct2.$c-block.txt
         ) done
 
 #Read line in -block.txt file, get device and interface name, lookup customer name, then output to a file.
@@ -44,7 +44,7 @@ for (( c=$oct3_start; c<=$oct3_end; c++ ))
 #For some reason this has to be ran twice to get rid of all occurences.
 ex -bsc '%s/\r//|x' results/$oct1-$oct2-$oct3_start-to-$oct3_end-free-ip-results.txt
 ex -bsc '%s/\r//|x' results/$oct1-$oct2-$oct3_start-to-$oct3_end-free-ip-results.txt
-cat results/$oct1-$oct2-$oct3_start-to-$oct3_end-free-ip-results.txt | tr -s " \t" | sort -u -k6 -o results/$oct1-$oct2-$oct3_start-to-$oct3_end-free-ip-report.txt
+cat results/$oct1-$oct2-$oct3_start-to-$oct3_end-free-ip-results.txt | tr -s " \t" | sort -u -o results/$oct1-$oct2-$oct3_start-to-$oct3_end-free-ip-report.txt
 
 #Print STOP time.
 now=$(date +%T.%N)
