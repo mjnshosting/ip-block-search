@@ -35,14 +35,14 @@ Install the "rancid" package from your OS's repo. This script was written on Fed
 All devices must be placed in the "device-list" on their own line. 
 
 # Instructions:
-nano free-ip.sh - copy and paste the code contained the attached zip file "free-ip.txt". Then press ctrl+x then ‘y’ then ‘Enter’
+**nano free-ip.sh** - copy and paste the code contained the attached zip file "free-ip.txt". Then press ctrl+x then ‘y’ then ‘Enter’
 
-nano collect-route.sh - copy and paste the code contained the attached zip file "collect-route.txt". Then press ctrl+x then ‘y’ then ‘Enter’. Finally make them executable. 
+**nano collect-route.sh** - copy and paste the code contained the attached zip file "collect-route.txt". Then press ctrl+x then ‘y’ then ‘Enter’. Finally make them executable. 
 
 ```bash
 chmod +x free-ip.sh collect-route.sh
 ```
-nano device-list - copy and paste the code contained the attached zip file "host_net-devices.txt". Then press ctrl+x then ‘y’ then ‘Enter’
+**nano device-list** - copy and paste the code contained the attached zip file "host_net-devices.txt". Then press ctrl+x then ‘y’ then ‘Enter’
 
 ## Breakdown
 *nohup ./free-ip.sh <value of first octet> <value of second octet> <value of start of range third octet> <value of start of range third octet> &*
@@ -53,7 +53,7 @@ nano device-list - copy and paste the code contained the attached zip file "host
 
 # Run Example: 
 
-*nohup ./collect-route.sh & *
+*nohup ./collect-route.sh &*
 
 **I like this program to be ran in the background as it took an nearly two hours for 105 devices and created 753MB of total data that will be used later.**
 
@@ -61,7 +61,7 @@ nano device-list - copy and paste the code contained the attached zip file "host
 			
 **When using nohup tail the nohup.out file for an update to see when the script is finished or just down use nohup with the & to run this in the foreground. Not suggested because this can take hours and will not finish where it left off.**
 
-*nohup ./free-ip.sh 192 168 0 26 & *
+*nohup ./free-ip.sh 192 168 0 26 &*
 		
 **This should be ran in the background as well. This will search through the collected *-route.txt files and finally create a sorted -report.txt file under the results folder.**
 
