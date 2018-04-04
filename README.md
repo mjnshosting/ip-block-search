@@ -36,51 +36,43 @@ Install the "rancid" package from your OS's repo. This script was written on Fed
 All devices must be placed in the "device-list" on their own line. 
 
 # Instructions:
-nano free-ip.sh
+nano free-ip.sh - copy and paste the code contained the attached zip file "free-ip.txt". Then press ctrl+x then ‘y’ then ‘Enter’
 
-                copy and paste the code contained the attached zip file "free-ip.txt". Then press ctrl+x then ‘y’ then ‘Enter’
+nano collect-route.sh - copy and paste the code contained the attached zip file "collect-route.txt". Then press ctrl+x then ‘y’ then ‘Enter’. Finally make them executable. 
 
-nano collect-route.sh
-
-                copy and paste the code contained the attached zip file "collect-route.txt". Then press ctrl+x then ‘y’ then ‘Enter’
-
+```bash
 chmod +x free-ip.sh collect-route.sh
+```
+nano device-list - copy and paste the code contained the attached zip file "host_net-devices.txt". Then press ctrl+x then ‘y’ then ‘Enter’
 
-                make them executable 
-
-nano device-list
-
-		copy and paste the code contained the attached zip file "host_net-devices.txt". Then press ctrl+x then ‘y’ then ‘Enter’
-
-nohup ./collect-route.sh &
-
-nohup ./free-ip.sh <value of first octet> <value of second octet> <value of start of range third octet> <value of start of range third octet> &
+## Breakdown
+*nohup ./free-ip.sh <value of first octet> <value of second octet> <value of start of range third octet> <value of start of range third octet> &*
 		
-		Some files will be created but the important one is in the results folder named <oct1>-<oct2>-<oct3_start>-to-<oct3_end>-free-ip-report.txt use nano to look at it and 
-		copy and paste the output to a notepad file for you to fill in the spreadsheet or documentation.         
+**Some files will be created but the important one is in the results folder named <oct1>-<oct2>-<oct3_start>-to-<oct3_end>-free-ip-report.txt use nano to look at it and copy and paste the output to a notepad file for you to fill in the spreadsheet or documentation.**
 
-nano results/<oct1>-<oct2>-<oct3_start>-to-<oct3_end>-free-ip-report.txt
+*nano results/<oct1>-<oct2>-<oct3_start>-to-<oct3_end>-free-ip-report.txt*
 
 # Run Example: 
 
-nohup ./collect-route.sh & 
+*nohup ./collect-route.sh & *
 
-		I like this program to be ran in the background as it took an nearly two hours for 105 devices and created 753MB of total data that will be used later. 
+**I like this program to be ran in the background as it took an nearly two hours for 105 devices and created 753MB of total data that will be used later.**
 
-tail -f nohup.out
+*tail -f nohup.out*
 			
-		**When using nohup tail the nohup.out file for an update to see when the script is finished or just down use nohup with the & to run this in the foreground. Not suggested because this can take hours and will not finish where it left off. **
+**When using nohup tail the nohup.out file for an update to see when the script is finished or just down use nohup with the & to run this in the foreground. Not suggested because this can take hours and will not finish where it left off.**
 
-nohup ./free-ip.sh 192 168 0 26 & 
+*nohup ./free-ip.sh 192 168 0 26 & *
 		
-		This should be ran in the background as well. This will search through the collected *-route.txt files and finally create a sorted -report.txt file under the results folder.
+**This should be ran in the background as well. This will search through the collected *-route.txt files and finally create a sorted -report.txt file under the results folder.**
 
-tail -f nohup.out
+*tail -f nohup.out*
 
-cat result/192-168-0-to-26-free-ip-report.txt
+*cat result/192-168-0-to-26-free-ip-report.txt*
 
-		It should look something like this. 
+**It should look something like this.**
 
+```
 On device FastEthernet0/7 route C 192.168.21.0/27 is directly connected belongs to customer Cust007:Bond-Networks-London:DIA
 
 On 192.168.61.1 Vlan07 route C 192.168.21.192/28 is directly connected belongs to customer Cust007-T1
@@ -92,6 +84,7 @@ On edge-r0.colo1.ga.mjnshosting.com !!Please Investigate Manually!! route S 192.
 On coredevice1000 Null0 route S 192.168.1.31/32 is directly connected belongs to customer
 
 On 11.20.85.30 Null0 route S 192.168.26.4/32 is directly connected belongs to customer
+```
 
 # Explanation:
 
