@@ -94,11 +94,5 @@ On <device name from device-list> <interface on device> route <route from device
 Its pretty easy to read and use the given output. Some things do need to be pointed out. 
 
 	1. Only Connected (C), Static (S), Local (L) routes are shown. We only need to see where blocks are routed so edge devices are good but sometimes all devices may be best for backbone devices that have 10GE customers. 
-
-	2. If there is no interface as you can see with the Static (S) route the script will output "!!Please Investigate Manually!!" in place of the interface name since one is not given. 
-
-		On edge-r0.colo1.ga.mjnshosting.com !!Please Investigate Manually!! route S 192.168.21.224/27 [1/0] via 192.168.32.20 belongs to customer !!Please Investigate Manually!!
-
-	3. If there is no output for "sh int <interface> | i escription" on the deivce then nothing will be printed. You will see this on Null0 interfaces like the example shown below. 
-
-		On 11.20.85.30 Null0 route S 192.168.26.4/32 is directly connected belongs to customer
+	2. If there is no interface as you can see with the Static (S) route the script will output "!!Please Investigate Manually!!" in place of the interface name since one is not given. On edge-r0.colo1.ga.mjnshosting.com !!Please Investigate Manually!! route S 192.168.21.224/27 [1/0] via 192.168.32.20 belongs to customer !!Please Investigate Manually!!
+	3. If there is no output for "sh int <interface> | i escription" on the deivce then nothing will be printed. You will see this on Null0 interfaces like the example shown below. On 11.20.85.30 Null0 route S 192.168.26.4/32 is directly connected belongs to customer
