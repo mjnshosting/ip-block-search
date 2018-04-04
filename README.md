@@ -18,14 +18,13 @@ rancid.
 
 Split into four files: 
 
-device-list - each line contains the name or ip of a network device you want clogin to access and dump the route table from.
+**device-list** - each line contains the name or ip of a network device you want clogin to access and dump the route table from.
 
-collect-route.sh - collects the route table for all devices listed in device-list. There are plans for this to do more later. 
+**collect-route.sh** - collects the route table for all devices listed in device-list. There are plans for this to do more later. 
 
-free-ip.sh - takes in your /16 block range (examples below) and uses the collected route data and extracts information pertaining 
-			 to your specific block. 
+**free-ip.sh** - takes in your /16 block range (examples below) and uses the collected route data and extracts information pertaining   to your specific block. 
 
-.cloginrc - Not something I created but it is required. check the example that I included. Google for further documentation. 
+**.cloginrc** - Not something I created but it is required. check the example that I included. Google for further documentation. 
 
 # Requirements:
 
