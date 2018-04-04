@@ -1,12 +1,13 @@
 # ip-block-search
 Collect route tables from Cisco devices then search the collected data for desired block ranges.
 
-##Special Thanks to:
+## Special Thanks to:
+
 Andres R.
 
 Jared J.
 
-##Story/Purpose/Objective:
+## Story/Purpose/Objective:
 Tasked with tracing IP blocks across 100+ devices to note if they were free or used by someone. I looked at the task
 and said, "You gotta be fucking kidding me! Im to dam PRETTY for UGLY work!" So It took me a week to develop and test the following 
 scripts along with my coworkers who were doing the process manually. It grew from just 5 devices to scanning all devices across the
@@ -26,7 +27,7 @@ free-ip.sh - takes in your /16 block range (examples below) and uses the collect
 
 .cloginrc - Not something I created but it is required. check the example that I included. Google for further documentation. 
 
-#Requirements:
+# Requirements:
 
 Install the "rancid" package from your OS's repo. This script was written on Fedora 22 system but was also tested on a Ubuntu system.
 
@@ -34,7 +35,7 @@ Install the "rancid" package from your OS's repo. This script was written on Fed
 
 All devices must be placed in the "device-list" on their own line. 
 
-#Instructions:
+# Instructions:
 nano free-ip.sh
 
                 copy and paste the code contained the attached zip file "free-ip.txt". Then press ctrl+x then ‘y’ then ‘Enter’
@@ -60,7 +61,7 @@ nohup ./free-ip.sh <value of first octet> <value of second octet> <value of star
 
 nano results/<oct1>-<oct2>-<oct3_start>-to-<oct3_end>-free-ip-report.txt
 
-#Run Example: 
+# Run Example: 
 
 nohup ./collect-route.sh & 
 
@@ -92,9 +93,9 @@ On coredevice1000 Null0 route S 192.168.1.31/32 is directly connected belongs to
 
 On 11.20.85.30 Null0 route S 192.168.26.4/32 is directly connected belongs to customer
 
-#Explanation:
+# Explanation:
 
-##Output Structure:
+## Output Structure:
 
 On <device name from device-list> <interface on device> route <route from device that contains our desired blick> belongs to customer <customer/interface description for interface on device>
 
